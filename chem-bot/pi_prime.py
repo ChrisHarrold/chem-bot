@@ -16,7 +16,7 @@ def recognize():
                 'threshold': 0.5
             }))
     strTheDump=(json.dumps(classes))
-    #print(str(strTheDump))
+    print(str(strTheDump))
     if 'score' in str(strTheDump):
         return True
         print("Score Returned - proceed")
