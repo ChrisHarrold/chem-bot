@@ -19,7 +19,7 @@ def recognize():
     #print(str(strTheDump))
     if 'score' in str(strTheDump):
         return True
-        print("Score Returned")
+        print("Score Returned - proceed")
     else:
         return False
         print("Not a high enough score")
