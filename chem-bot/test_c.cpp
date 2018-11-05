@@ -23,7 +23,7 @@ int main()
     Speeds two = { 128, 128, 1000 };
     Speeds three = { 0, 255, 1000 };
     a = the_value;
-    cout << "Displaying Information," << endl;
+    cout << "Displaying Information:" << endl;
     
     // this works and compiles:
     return_values(three);
