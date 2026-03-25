@@ -10,7 +10,7 @@ float vInput = 0.0;        // Variable to store measured voltage
 float vRef = 5.0;          // Reference voltage (5V)
 const float voltageScaleFactor = 5.0;
 const float reachedVoltageThreshold = 16.0;
-const float shutdownVoltageThreshold = 16.1;
+const float shutdownVoltageThreshold = 15.1;
 
 unsigned long firstReached16Timestamp = 0;
 bool reached16V = false;
@@ -28,29 +28,24 @@ void setup() {
 }
 
 void loop() {
-  // Read the analog value (0-1023)
   int sensorValue = analogRead(analogPin);
 
-  // Convert to voltage: (value / max_steps) * ref_voltage) * voltage factor (5)
   vInput = ((sensorValue * vRef) / 1023.0) * voltageScaleFactor;
 
   if (!reached16V && vInput >= reachedVoltageThreshold) {
     reached16V = true;
     firstReached16Timestamp = millis();
-  }
-
-  // Print results
-  Serial.print("Voltage: ");
-  Serial.print(vInput);
-  Serial.println("V");
-  if (reached16V) {
     Serial.print("First >= 16.0V timestamp (ms): ");
     Serial.println(firstReached16Timestamp);
   }
+
+  Serial.print("Voltage: ");
+  Serial.print(vInput);
+  Serial.println("V");
 
   if (reached16V && vInput < shutdownVoltageThreshold) {
     shutdownArduino();
   }
 
-  delay(5000); // Wait 5000ms before next reading
+  delay(5000);
 }
