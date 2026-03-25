@@ -3,7 +3,7 @@
   Reads a voltage on A0 and prints it to the Serial Monitor.
 */
 
-#include <avr/sleep.h>
+#include <AVR/sleep.h>
 
 const int analogPin = A0;  // Pin connected to voltage source
 float vInput = 0.0;        // Variable to store measured voltage
