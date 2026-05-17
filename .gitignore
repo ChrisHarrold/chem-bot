@@ -1,0 +1,74 @@
+# .gitignore for Arduino/PlatformIO and general C++ Embedded development
+
+# Arduino IDE
+*.ino.*
+*.elf
+*.hex
+*.bin
+*.eep
+*.map
+*.dmp
+*.pyc
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.libdeps/
+.vscode/
+.pytest_cache/
+*.cpp.bak
+
+# MacOS
+.DS_Store
+
+# Build and temp files
+*.obj
+*.o
+*.a
+*.so
+*.exe
+*.d
+*.dep
+*.out
+*.log
+*.sdf
+*.swp
+*.bak
+*.tmp
+
+# Visual Studio Code
+.vscode/
+
+# Sketch settings
+*.sublime-workspace
+*.sublime-project
+
+# Windows thumbnail/db files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Other OS files
+Icon?
+._*
+
+# Node modules (in case of scripts)
+node_modules/
+
+# Python virtual env
+.venv/
+venv/
+
+# Backup files
+*~
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Arduino serial monitor logs
+serial_logs/
